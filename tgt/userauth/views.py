@@ -1,3 +1,4 @@
 from django.shortcuts import render
+from .models import CustomUser, Department
 
-# Create your views here.
+

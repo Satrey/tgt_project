@@ -139,6 +139,10 @@ AUTH_USER_MODEL = 'userauth.CustomUser'
 
 LOGIN_REDIRECT_URL = '/'
 
+LOGIN_URL = 'login'
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+

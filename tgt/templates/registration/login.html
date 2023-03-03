@@ -1,42 +1,26 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
-<div class="card col-6">
-    {% if form.errors %}
-      <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
 
-    {% if next %}
-      {% if user.is_authenticated %}
-        <p>Your account doesn't have access to this page. To proceed,
-        please login with an account that has access.</p>
-      {% else %}
-        <p>Please login to see this page.</p>
-      {% endif %}
-    {% endif %}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="content-section card ">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group m-4">
+                        <legend class="border-bottom m-4">Вход</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group m-4">
+                        <button class="btn btn-outline-info" type="submit">Войти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
 
-    <form method="post" action="{% url 'login' %}">
-        <table>
-
-        <tr>
-          <td>{{ form.username.label_tag }}</td>
-          <td>{{ form.username }}</td>
-        </tr>
-
-        <tr>
-          <td>{{ form.password.label_tag }}</td>
-          <td>{{ form.password }}</td>
-        </tr>
-    </table>
-
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-        {% csrf_token %}
-    </form>
-
-    {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-</div>
-
-
-{% endblock %}
+{% endblock content %}

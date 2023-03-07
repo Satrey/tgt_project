@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'userauth',
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_admin_geomap',
+    'crossroads',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +139,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'userauth.CustomUser'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'tests'
+
+LOGOUT_REDIRECT_URL = 'tests'
 
 LOGIN_URL = 'login'
 

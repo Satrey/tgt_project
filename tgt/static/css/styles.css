@@ -1,3 +1,23 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 h1 {
     color: red;
 }
+
+.text-shadow {
+    text-shadow: 2px 2px 5px black;
+}
+
+.aside {
+    height: 93vh;
+}
+
+.main-layout {
+    height: 93vh;
+}
+

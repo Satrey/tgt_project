@@ -4,14 +4,14 @@
 
 {% block content %}
 
-    <div class="row">
+    <div class="row container-fluid d-flex h-100 justify-content-center align-items-center p-0">
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="content-section card ">
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group m-4">
-                        <legend class="border-bottom m-4">Вход</legend>
+                        <legend class="border-bottom">Вход</legend>
                         {{ form|crispy }}
                     </fieldset>
                     <div class="form-group m-4">

@@ -21,11 +21,13 @@
                 <div class="col-2">
                     <div class="card m-1 mt-2 aside">
                         {% include 'tests/blocks/aside.html' %}
+
                     </div>
                 </div>
                 <div class="col-10">
                     <div class="card m-1 mt-2 main-layout">
                         {% block main %}
+                            {{ themes }}
                         {% endblock %}
                     </div>
                 </div>
@@ -36,7 +38,7 @@
             <div>
                 <h1 class="text-center">You are not logged in</h1>
                 <div class="d-flex justify-content-center">
-                    <a  class="btn btn-success login-button" style="width: 400px" href="{% url 'login' %}">login</a>
+                    <a  class="btn btn-success login-button shadow" style="width: 400px" href="{% url 'login' %}">login</a>
                 </div>
             </div>
         </div>
